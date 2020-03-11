@@ -12,7 +12,7 @@ To use Sclera through JDBC, the application needs to:
     - Sclera Core Engine, [sclera-core](https://github.com/scleradb/sclera/tree/master/modules/core),
     - Sclera JDBC Driver, [sclera-jdbc](https://github.com/scleradb/sclera/tree/master/modules/interfaces/jdbc), and
     - Sclera plugins needed (if any).
-- connect to Sclera's JDBC driver using the JDBC URL `jdbc:sclera`, and execute commands and queries using the standard [JDBC API](https://docs.oracle.com/javase/tutorial/jdbc/overview/index.html).
+- connect to Sclera's JDBC driver using the JDBC URL `jdbc:scleradb`, and execute commands and queries using the standard [JDBC API](https://docs.oracle.com/javase/tutorial/jdbc/overview/index.html).
 
 The example application described below is a command line tool to initialize Sclera, and execute queries. See [here](#executable-script) for details on the usage.
 
