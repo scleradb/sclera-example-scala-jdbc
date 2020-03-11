@@ -53,7 +53,7 @@ There are two procedures:
 
 When a connection is initialized, Sclera first checks the sanity of its Schema and issues a warning if anything is wrong. Since we are initializing the schema, we bypass this step by passing a flag `checkSchema` in the properties while creating a connection.
 
-### Code details: `runQueries(...)`
+### Code Details: `runQueries(...)`
 
 - Links with Sclera's JDBC driver and gets a JDBC `Connection`.
 - Creates a JDBC `Statement` using the JDBC connection.
