@@ -20,10 +20,6 @@ scalacOptions ++= Seq(
     "-Werror", "-feature", "-deprecation", "-unchecked"
 )
 
-// uncomment the line below to set SCLERA_ROOT
-// if set, this will be used instead of the environment variable
-// javaOptions += "-DSCLERA_ROOT=/path/to/sclera_root"
-
 val mkscript = taskKey[File]("Create executable script")
 
 mkscript := {
