@@ -2,7 +2,7 @@ package com.example.scleradb.jdbc
 
 import java.util.Properties
 import java.sql.{Connection, Statement, ResultSet}
-import java.sql.{DriverManager, ResultSetMetaData, Types}
+import java.sql.{DriverManager, ResultSetMetaData}
 
 object JdbcExample {
     val jdbcUrl: String = "jdbc:scleradb"
