@@ -19,13 +19,13 @@ object JdbcExample {
         props.setProperty("checkSchema", "false")
 
         // get a JDBC connection to Sclera
-        var conn: Connection = DriverManager.getConnection(jdbcUrl, props)
+        val conn: Connection = DriverManager.getConnection(jdbcUrl, props)
 
-        // display warnings, if any
-        Option(conn.getWarnings()).foreach(println)
-
-        // initialize the schema by executing the statement "create schema"
         try {
+            // display warnings, if any
+            Option(conn.getWarnings()).foreach(println)
+
+            // initialize the schema by executing the statement "create schema"
             val stmt: Statement = conn.createStatement()
             try stmt.executeUpdate("create schema") finally stmt.close()
         } finally conn.close()
@@ -34,12 +34,12 @@ object JdbcExample {
     // run queries on Sclera
     private def runQueries(queries: Array[String]): Unit = {
         // get a JDBC connection to Sclera
-        var conn: Connection = DriverManager.getConnection(jdbcUrl)
-
-        // display warnings, if any
-        Option(conn.getWarnings()).foreach(println)
+        val conn: Connection = DriverManager.getConnection(jdbcUrl)
 
         try {
+            // display warnings, if any
+            Option(conn.getWarnings()).foreach(println)
+
             // create a statement to execute queries
             val stmt: Statement = conn.createStatement()
 
@@ -48,17 +48,17 @@ object JdbcExample {
                 // execute query
                 val rs: ResultSet = stmt.executeQuery(query)
 
-                // result metadata
-                val metaData: ResultSetMetaData = rs.getMetaData()
-                val n: Int = metaData.getColumnCount()
-                val colNames: Seq[String] = Range.inclusive(1, n).map { i =>
-                    metaData.getColumnLabel(i)
-                }
-
-                // display column names
-                println(colNames.mkString(", "))
-
                 try {
+                    // result metadata
+                    val metaData: ResultSetMetaData = rs.getMetaData()
+                    val n: Int = metaData.getColumnCount()
+                    val colNames: Seq[String] = Range.inclusive(1, n).map { i =>
+                        metaData.getColumnLabel(i)
+                    }
+
+                    // display column names
+                    println(colNames.mkString(", "))
+
                     // display each row in the result
                     while( rs.next() ) {
                         val rowVals: Seq[String] =
